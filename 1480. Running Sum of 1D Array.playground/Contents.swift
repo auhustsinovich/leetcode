@@ -29,8 +29,8 @@ Constraints:
 import UIKit
 
 class Solution {
-    //first solution
-    //time complexity = O(n)
+    //first solution - Straight approach
+    //time complexity = O(N)
     func runningSum(_ nums: [Int]) -> [Int] {
         // I create new array
         var resultArray: [Int] = []
@@ -42,7 +42,21 @@ class Solution {
         }
         return resultArray
     }
+
+    //second solution - more elegant approach without creating additional arrays
+    //time complexity = O(N)
+    //I use inout parameters to make nums mutable
+    func anotherRunningSum(_ nums: inout [Int]) -> [Int] {
+        // I pass the loop starting from the second element in array(with index 1)
+        for i in 1..<nums.count {
+            nums[i] += nums[i-1]
+        }
+        return nums
+    }
 }
 
 var classSol = Solution()
-classSol.runningSum([1,2,3,4,5])
+var nums = [1,2,3,4,5]
+
+classSol.runningSum(nums)
+classSol.anotherRunningSum(&nums)
