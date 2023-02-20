@@ -29,8 +29,9 @@ Constraints:
 import UIKit
 
 class Solution {
-    //first solution
-    //time complexity = O(n)
+
+    //first solution - straight approach
+    //time complexity = O(N)
     func runningSum(_ nums: [Int]) -> [Int] {
         // I create new array
         var resultArray: [Int] = []
@@ -42,7 +43,19 @@ class Solution {
         }
         return resultArray
     }
+
+    // second solution - Optimal approach
+    // time complexity = O(N)
+    func anotherRunningSum(_ nums: inout [Int]) -> [Int] {
+        // I pass the loop starting from the second element in array(with index 1)
+        for i in 1..<nums.count {
+            nums[i] += nums[i - 1]
+        }
+        return nums
+    }
 }
 
-var classSol = Solution()
-classSol.runningSum([1,2,3,4,5])
+let classSol = Solution()
+var nums = [1,2,3,4,5]
+solution.runningSum(nums)
+solution.runningSum2(&nums)
