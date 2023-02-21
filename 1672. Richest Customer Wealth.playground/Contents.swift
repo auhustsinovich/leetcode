@@ -46,7 +46,16 @@ class Solution {
         }
         return array.max() ?? 0
     }
+
+    //one liner solution
+    func anotherMaximumWealth(_ accounts: [[Int]]) -> Int {
+            return accounts.reduce(0, { max($0, $1.reduce(0, +)) })
+        }
 }
 
 let solution = Solution()
-solution.maximumWealth([[11,22,3],[4,5,7], [2,4,3]])
+let bankAccounts: [[Int]] = [[11,22,3],[4,5,7], [2,4,3]]
+
+solution.maximumWealth(bankAccounts)
+solution.anotherMaximumWealth(bankAccounts)
+
