@@ -57,5 +57,5 @@ class Solution {
 
 let classSol = Solution()
 var nums = [1,2,3,4,5]
-solution.runningSum(nums)
-solution.runningSum2(&nums)
+classSol.runningSum(nums)
+classSol.anotherRunningSum(&nums)
