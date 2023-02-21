@@ -54,8 +54,7 @@ class Solution {
 }
 
 let solution = Solution()
-let bankAccounts: [[Int]] = [[11,22,3],[4,5,7], [2,4,3]]
+let bankAccounts: [[Int]] = [[12,23,3],[4,5,7], [2,4,3]]
 
 solution.maximumWealth(bankAccounts)
 solution.anotherMaximumWealth(bankAccounts)
-
