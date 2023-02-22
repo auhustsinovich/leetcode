@@ -29,6 +29,8 @@
 */
 
 class Solution {
+    // straight approach with if else statement
+    // time complexity: O(n)
     func fizzBuzz(_ n: Int) -> [String] {
         var result: [String] = []
         for i in 1...n {
@@ -44,7 +46,27 @@ class Solution {
         }
         return result
     }
+
+    // more elegant approach with switch statement
+    // time complexity O(n)
+    func fizzBuzz2(_ n: Int) -> [String] {
+        var result: [String] = []
+        for i in 1...n {
+            switch i {
+            case let i where i % 3 == 0 && i % 5 == 00:
+                result.append("FizzBuzz")
+            case let i where i % 3 == 0:
+                result.append("Fizz")
+            case let i where i % 5 == 0:
+                result.append("Buzz")
+            default:
+                result.append("\(i)")
+            }
+        }
+        return result
+    }
 }
 
 let sol = Solution()
 sol.fizzBuzz(15)
+sol.fizzBuzz2(15)
