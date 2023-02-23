@@ -31,6 +31,7 @@
 
 // Straight solution
 // Complexity = O(N)
+
 class Solution {
     func numberOfSteps(_ num: Int) -> Int {
         // We create result Integer and a counter of steps
@@ -46,7 +47,24 @@ class Solution {
         }
         return counter
     }
+
+    // Same approach but with ternary operator
+    // Complexity: O(N)
+    // p.s. we can use inout parameter num without creating counter
+    func numberOfSteps2(_ num: Int) -> Int {
+        // We create result Integer and a counter of steps
+        var result = num
+        var counter = 0
+        while result != 0 {
+            result = result % 2 == 0 ? result / 2 : result - 1
+            counter += 1
+        }
+        return counter
+    }
 }
 
 var sol = Solution()
-sol.numberOfSteps(123)
+var exampleInt = 123
+
+sol.numberOfSteps(exampleInt)
+sol.numberOfSteps2(exampleInt)
