@@ -48,7 +48,7 @@ class Solution {
         return counter
     }
 
-    // Same approach but with ternary operator
+    // Same approach with ternary operator
     // Complexity: O(N)
     // p.s. We can use inout parameter 'num' without creating a counter
     func numberOfSteps2(_ num: Int) -> Int {
