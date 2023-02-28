@@ -34,7 +34,7 @@
 
 class Solution {
     // Approach with iterating array by every element
-    // Time complexity O(N*N)
+    // Time complexity O(N^2)
     func smallerNumbersThanCurrent(_ nums: [Int]) -> [Int] {
         var resultArray: [Int] = []
         for i in 0..<nums.count {
