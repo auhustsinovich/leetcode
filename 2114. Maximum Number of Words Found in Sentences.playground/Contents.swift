@@ -48,8 +48,18 @@ class Solution {
                 result = counter
             }
         }
-        // we return +1 because number of words = spaces + 1
+        // We return +1 because number of words = spaces + 1
         return result + 1
+    }
+    // Approach with Time Complexity O(N)
+    func mostWordsFound2(_ sentences: [String]) -> Int {
+        var result = 0
+        for i in 0..<sentences.count {
+            if sentences[i].split(separator: " ").count > result {
+                result = sentences[i].split(separator: " ").count
+            }
+        }
+        return result
     }
 }
 
