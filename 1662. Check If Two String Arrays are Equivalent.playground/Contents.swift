@@ -36,7 +36,7 @@ class Solution {
     func arrayStringsAreEqual(_ word1: [String], _ word2: [String]) -> Bool {
         word1.reduce("", { $0 + $1 }) == word2.reduce("", { $0 + $1 })
     }
-    // Another one-liner with O(N)m using .joined
+    // Another one-liner with O(N) using .joined
     func arrayStringsAreEqual2(_ word1: [String], _ word2: [String]) -> Bool {
         word1.joined() == word2.joined()
     }
@@ -44,4 +44,4 @@ class Solution {
 
 var sol = Solution()
 sol.arrayStringsAreEqual(["abc", "d", "defg"], ["abcddefg"])
-sol.arrayStringsAreEqual2(["abc", "d", "defg"], ["abcddefg"])
+sol.arrayStringsAreEqual2(["abce", "d", "defg"], ["abcdedefg"])
