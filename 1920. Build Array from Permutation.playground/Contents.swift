@@ -39,8 +39,16 @@ class Solution {
         }
         return ans
     }
+
+    // One liner solution
+    // Time complexity O(N)
+    func buildArray2(_ nums: [Int]) -> [Int] {
+        nums.map { nums[$0] }
+    }
 }
 
 var sol = Solution()
-sol.buildArray([0,2,1,5,3,4])
-sol.buildArray([5,0,1,2,3,4])
+var exampleArray = [0,2,1,5,3,4]
+
+sol.buildArray(exampleArray)
+sol.buildArray2(exampleArray)
