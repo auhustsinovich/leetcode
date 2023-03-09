@@ -28,6 +28,8 @@
  */
 
 class Solution {
+    // Straight solution with dictionary
+    // Time complexity O(N)
     func singleNumber(_ nums: [Int]) -> Int {
         var dict: [Int:Int] = [:]
         var result: Int = 0
