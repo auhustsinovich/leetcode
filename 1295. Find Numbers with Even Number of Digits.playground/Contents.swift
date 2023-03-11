@@ -46,7 +46,14 @@ class Solution {
         }
         return counter
     }
+    // one liner solution
+    func findNumbers2(_ nums: [Int]) -> Int {
+        nums.filter { String($0).count.isMultiple(of: 2)}.count
+    }
 }
 
 var sol = Solution()
-sol.findNumbers([142,14,54354,7324,83,10])
+let example = [142,14,54354,7324,83,10]
+
+sol.findNumbers(example)
+sol.findNumbers2(example)
