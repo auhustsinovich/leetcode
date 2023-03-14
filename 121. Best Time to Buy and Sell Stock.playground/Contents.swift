@@ -40,6 +40,20 @@ class Solution {
         guard sellBuyOption < 0 else { return 0 }
         return abs(sellBuyOption)
     }
+    // Optimal solution with time complexity O(N) where N is length of `prices` elements
+    func maxProfit1(_ prices: [Int]) -> Int {
+        guard !prices.isEmpty else { return 0 }
+        var minPrice = prices.first!
+        var maxProfit = 0
+        for price in prices {
+            if price < minPrice {
+                minPrice = price
+            } else {
+                maxProfit = max(maxProfit, price - minPrice)
+            }
+        }
+        return maxProfit
+    }
 }
 
 var sol = Solution()
@@ -47,4 +61,4 @@ sol.maxProfit([7,1,5,3,6,4])
 sol.maxProfit([7,6,4,3,1])
 
 assert(sol.maxProfit([7,6,4,3,1]) == 0)
-assert(sol.maxProfit([7,1,5,3,6,4]) == 5)
+assert(sol.maxProfit1([7,1,5,3,6,4]) == 5)
