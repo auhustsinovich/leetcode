@@ -40,12 +40,22 @@ class Solution {
         }
         return counter
     }
+    // Optimal solution with time complexity O(N)
+    func firstMissingPositive2(_ nums: [Int]) -> Int {
+        var counter: Int = 1
+        var set = Set(nums)
+        while set.contains(counter) {
+            counter += 1
+        }
+        return counter
+    }
 }
+
 
 var sol = Solution()
 var ints = [1,4,2,5]
 
 assert(sol.firstMissingPositive(ints) == 3)
-sol.firstMissingPositive(ints)
+sol.firstMissingPositive2(ints)
 
 
