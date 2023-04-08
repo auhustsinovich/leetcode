@@ -49,7 +49,14 @@ class Solution {
             return candyDict.values.count
         }
     }
+
+    // Elegant approach using Set
+    // Time complexity O(N), where N is length of `candyType`
+    func distributeCandies2(_ candyType: [Int]) -> Int {
+        return min(Set(candyType).count, candyType.count / 2)
+    }
 }
 
 var sol = Solution()
 assert(sol.distributeCandies([2,2,2,2,3,3]) == 2 )
+assert(sol.distributeCandies2([2,2,2,2,3,3]) == 2 )
