@@ -30,7 +30,12 @@ class Solution {
         var odds =  nums.filter { !$0.isMultiple(of: 2) }
         return evens + odds
     }
+    // One liner solution
+    func sortArrayByParity2(_ A: [Int]) -> [Int] {
+        return A.sorted(by: { return $0 % 2 == 0 && $1 % 2 == 1 })
+    }
 }
 
 var sol = Solution()
 sol.sortArrayByParity([4,1,3,2])
+sol.sortArrayByParity2([4,1,3,2])
